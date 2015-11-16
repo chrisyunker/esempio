@@ -1,4 +1,3 @@
-
 -module(esempio_sup).
 
 -behaviour(supervisor).
@@ -15,15 +14,13 @@
 %% ===================================================================
 %% API functions
 %% ===================================================================
-
 start_link() ->
     supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
 %% ===================================================================
 %% Supervisor callbacks
 %% ===================================================================
-
 init([]) ->
     EsempioSpec = ?CHILD(esempio_server, worker),
-    {ok, { {one_for_one, 5, 10}, [EsempioSpec]} }.
+    {ok, {{one_for_one, 5, 10}, [EsempioSpec]}}.
 

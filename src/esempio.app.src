@@ -1,13 +1,10 @@
 {application, esempio,
- [
-  {description, ""},
+ [{description, ""},
   {vsn, "1.0"},
   {registered, []},
-  {applications, [
-                  kernel,
+  {applications, [kernel,
                   stdlib,
-                  lager
-                 ]},
-  {mod, { esempio_app, []}},
+                  lager]},
+  {mod, {esempio_app, []}},
   {env, []}
  ]}.
